@@ -104,6 +104,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
   while(!(HAL_ADCEx_Calibration_Start(&hadc1)==HAL_OK));
   printf("$MSG,ADC Calibration Ok*\n");
+
+  HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_dma_values, 3);
   /* USER CODE END 2 */
 
   /* Infinite loop */
